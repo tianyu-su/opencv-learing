@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="opencvcontrib_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-opencvcontrib Condition="'$(Linkage-opencvcontrib)' == ''">dynamic</Linkage-opencvcontrib>
+    <CallingConvention-opencvcontrib Condition="'$(CallingConvention-opencvcontrib)' == ''">cdecl</CallingConvention-opencvcontrib>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>HAS_OPENCV;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v140 and Release" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_xphoto310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_xobjdetect310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_ximgproc310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_xfeatures2d310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_viz310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_videostab310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_videoio310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_video310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_ts310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_tracking310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_text310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_surface_matching310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_superres310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_structured_light310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_stitching310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_stereo310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_shape310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_saliency310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_rgbd310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_reg310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_plot310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_photo310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_optflow310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_objdetect310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_ml310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_line_descriptor310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_imgproc310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_imgcodecs310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_highgui310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_fuzzy310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_flann310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_features2d310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_face310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_dpm310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_dnn310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_datasets310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_core310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_ccalib310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_calib3d310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_bioinspired310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_bgsegm310.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Release\opencv_aruco310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v140 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_xphoto310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_xobjdetect310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_ximgproc310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_xfeatures2d310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_viz310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_videostab310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_videoio310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_video310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_ts310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_tracking310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_text310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_surface_matching310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_superres310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_structured_light310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_stitching310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_stereo310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_shape310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_saliency310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_rgbd310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_reg310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_plot310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_photo310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_optflow310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_objdetect310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_ml310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_line_descriptor310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_imgproc310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_imgcodecs310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_highgui310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_fuzzy310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_flann310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_features2d310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_face310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_dpm310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_dnn310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_datasets310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_core310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_ccalib310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_calib3d310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_bioinspired310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_bgsegm310d.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v140\Debug\opencv_aruco310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="opencvcontrib_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="opencvcontrib_init">
+    <opencvcontrib_Contains Text="Linkage-dynamic" Library="opencvcontrib" Value="dynamic" Condition="'$(Linkage-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="Linkage-static" Library="opencvcontrib" Value="static" Condition="'$(Linkage-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="Linkage-ltcg" Library="opencvcontrib" Value="ltcg" Condition="'$(Linkage-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="Linkage-sxs" Library="opencvcontrib" Value="sxs" Condition="'$(Linkage-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="CallingConvention-cdecl" Library="opencvcontrib" Value="cdecl" Condition="'$(CallingConvention-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="CallingConvention-stdcall" Library="opencvcontrib" Value="stdcall" Condition="'$(CallingConvention-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="CallingConvention-fastcall" Library="opencvcontrib" Value="fastcall" Condition="'$(CallingConvention-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="CallingConvention-thiscall" Library="opencvcontrib" Value="thiscall" Condition="'$(CallingConvention-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-opencvcontrib" />
+    </opencvcontrib_Contains>
+    <opencvcontrib_Contains Text="CallingConvention-clrcall" Library="opencvcontrib" Value="clrcall" Condition="'$(CallingConvention-opencvcontrib)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-opencvcontrib" />
+    </opencvcontrib_Contains>
+  </Target>
+</Project>

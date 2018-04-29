@@ -1,0 +1,12 @@
+﻿  call_lib.cpp
+E:\OUC\学习资料\大二上\SRDP\OpenCVdemo\packages\opencvcontrib.3.1.0\build\native\include\opencv2/core/mat.hpp(1955): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OUC\学习资料\大二上\SRDP\OpenCVdemo\packages\opencvcontrib.3.1.0\build\native\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OUC\学习资料\大二上\SRDP\OpenCVdemo\packages\opencvcontrib.3.1.0\build\native\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OUC\学习资料\大二上\SRDP\OpenCVdemo\packages\opencvcontrib.3.1.0\build\native\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码
+  1 of 398 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  OpenCVdemo.vcxproj -> E:\OUC\学习资料\大二上\SRDP\OpenCVdemo\x64\Release\OpenCVdemo.exe
+  OpenCVdemo.vcxproj -> E:\OUC\学习资料\大二上\SRDP\OpenCVdemo\x64\Release\OpenCVdemo.pdb (Full PDB)
